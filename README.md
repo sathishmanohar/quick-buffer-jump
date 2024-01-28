@@ -4,7 +4,8 @@ Quick buffer jump makes switching between open buffers more intuitive. All you n
 
 ## Demo
 
-![Quick Buffer Jump Demo](https://github.com/sathishmanohar/quick-buffer-jump/blob/assets/assets/quick-buffer-jump.gif?raw=true)
+![Quick Buffer Jump Demo](https://github.com/sathishmanohar/quick-buffer-jump/assets/270991/51317986-4362-4ecd-b430-39de5eb50bca)
+
 
 ## Installation Instructions
 
