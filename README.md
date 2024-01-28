@@ -2,6 +2,10 @@
 
 Quick buffer jump makes switching between open buffers more intuitive. All you need to do is invoke the quick buffer jump screen and press the letter next to the buffer to jump to that buffer in the current active pane
 
+## Demo
+
+![Quick Buffer Jump Demo](https://github.com/sathishmanohar/quick-buffer-jump/blob/assets/assets/quick-buffer-jump.gif?raw=true)
+
 ## Installation Instructions
 
 ### Vim Plug
