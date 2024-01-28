@@ -33,10 +33,10 @@ To use the plugin require the lua module with
 
 `require "quick_buffer_jump"`
 
-## Usage
+inside your `init.lua`
 
-Now the Quick Buffer Jump floating window should appear with the list of all open buffers when you type `:QuickBufferJump`
+## Usage Instructions
 
-You can jump to the buffer by jumping to the buffer you want to jump by `j k` keys or with your favorite jumping plugin like Easy Motion or leap.
+Upon typing `:QuickBufferJump`, the Quick Buffer Jump floating window will display a list of all open buffers. To navigate to a specific buffer, you can use the `j` and `k` keys, or employ a preferred jumping plugin such as Easy Motion or Leap. Once you have moved the cursor to the desired buffer, press Enter to open it.
 
-Even better you can just press the alphabet listed at the end the buffer you want to jump and jump straight to that buffer in your active pane.
+For an even more streamlined experience, you can instantly jump to your desired buffer in the active pane by pressing the alphabet letter displayed at the end of the buffer's name. This method is a swift and efficient way to navigate!
