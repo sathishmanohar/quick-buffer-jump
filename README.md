@@ -45,3 +45,7 @@ inside your `init.lua`
 Upon typing `:QuickBufferJump`, the Quick Buffer Jump floating window will display a list of all open buffers. To navigate to a specific buffer, you can use the `j` and `k` keys, or employ a preferred jumping plugin such as Easy Motion or Leap. Once you have moved the cursor to the desired buffer, press Enter to open it.
 
 For an even more streamlined experience, you can instantly jump to your desired buffer in the active pane by pressing the alphabet letter displayed at the end of the buffer's name. This method is a swift and efficient way to navigate!
+
+## How is this different from :Telescope buffers or similar approaches
+
+Compared to the :Telescope buffers, Quick Buffer Jump offers a faster way to jump an open buffer, requiring less typing.
