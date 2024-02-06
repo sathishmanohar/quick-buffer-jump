@@ -50,6 +50,9 @@ function M.quick_buffer_jump()
         border = 'rounded'
     })
 
+	-- Enable cursorline for the floating window
+    api.nvim_win_set_option(float_win, 'cursorline', true)
+
 	-- Enable line numbers for the floating window
 	api.nvim_win_set_option(float_win, 'number', true)
 
