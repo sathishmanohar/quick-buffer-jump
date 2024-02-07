@@ -40,6 +40,11 @@ To use the plugin require the lua module with
 
 inside your `init.lua`
 
+
+To configure options pass a table to the setup function like the example below:
+
+`require "quick_buffer_jump".setup{ alphabet = "qwerty" }`
+
 ## Usage Instructions
 
 Upon typing `:QuickBufferJump`, the Quick Buffer Jump floating window will display a list of all open buffers. To navigate to a specific buffer, you can use the `j` and `k` keys, or employ a preferred jumping plugin such as Easy Motion or Leap. Once you have moved the cursor to the desired buffer, press Enter to open it.
