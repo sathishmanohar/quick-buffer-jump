@@ -43,7 +43,9 @@ inside your `init.lua`
 
 To configure options pass a table to the setup function like the example below:
 
-`require "quick_buffer_jump".setup{ alphabet = "qwerty" }`
+`require "quick_buffer_jump".setup{ alphabet = "asdf" }`
+
+**Note: the alphabet can't contain 'j','k','q' as these are reserved for plugin functionality**
 
 ## Usage Instructions
 
