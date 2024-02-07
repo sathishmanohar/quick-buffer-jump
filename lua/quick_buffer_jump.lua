@@ -1,9 +1,7 @@
 local M = {}
 
 M.config = {
-  opts = {
     alphabet = "abcdefghijklmnopqrstuvwxyz",
-  },
 }
 
 M.setup = function(params)
@@ -19,7 +17,7 @@ function M.quick_buffer_jump()
     local buffers = api.nvim_list_bufs()
     local lines = {}
     local buffer_map = {}  -- Table to map line numbers to buffer numbers
-    local alphabet = M.config.opts.alphabet
+    local alphabet = M.config.alphabet
     local alphabet_count = 1
 
     -- Create buffer for the floating window
