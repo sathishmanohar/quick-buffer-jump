@@ -1,11 +1,23 @@
 local M = {}
 
 M.config = {
-    alphabet = "abcdefghijklmnopqrstuvwxyz",
+    alphabet = "abcdefghilmnoprstuvwxyz",
 }
 
 M.setup = function(params)
-  M.config = vim.tbl_deep_extend('force', {}, M.config, params)
+    vim.validate({ params = { params, 'table',true}, alphabet = {params.alphabet,'string',true} })
+    M.config = vim.tbl_deep_extend('force', {}, M.config, params)
+
+    vim.validate({ alphabet = { params.alphabet, function()
+
+        if string.find(M.config.alphabet, "[qjk]", 1, false) then
+            M.config.alphabet = string.gsub(M.config.alphabet,"[qjk]+","")
+
+            return false, "quick_buffer_jump error: the alphabet can't contain `q`,`j`, or `k`"
+        end
+        return true
+    end}
+    })
 end
 
 -- Define a highlight group for the alphabet label
