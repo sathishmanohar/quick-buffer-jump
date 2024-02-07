@@ -1,5 +1,15 @@
 local M = {}
 
+M.config = {
+  opts = {
+    alphabet = "abcdefghijklmnopqrstuvwxyz",
+  },
+}
+
+M.setup = function(params)
+  M.config = vim.tbl_deep_extend('force', {}, M.config, params)
+end
+
 -- Define a highlight group for the alphabet label
 vim.api.nvim_command('highlight AlphabetLabel guifg=Cyan ctermfg=Cyan')
 
@@ -9,7 +19,7 @@ function M.quick_buffer_jump()
     local buffers = api.nvim_list_bufs()
     local lines = {}
     local buffer_map = {}  -- Table to map line numbers to buffer numbers
-    local alphabet = 'abcdefghilmnoprstuvwxyz'
+    local alphabet = M.config.opts.alphabet
     local alphabet_count = 1
 
     -- Create buffer for the floating window
