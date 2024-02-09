@@ -41,11 +41,12 @@ To use the plugin require the lua module with
 inside your `init.lua`
 
 
-To configure options pass a table to the setup function like the example below:
+### Ergonomic Alphabet Option
+To switch the default buffer labels from `abcd...` to `asdf...`, the `ergonmic_alphabet` option can be passed as a
+table to the setup function like the example below:
 
-`require "quick_buffer_jump".setup{ alphabet = "asdf" }`
+`require "quick_buffer_jump".setup{ ergonmic_alphabet = true }`
 
-**Note: the alphabet can't contain 'j','k','q' as these are reserved for plugin functionality**
 
 ## Usage Instructions
 
