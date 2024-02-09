@@ -1,5 +1,23 @@
 local M = {}
 
+M.config = {
+    alphabet = "abcdefghilmnoprstuvwxyz",
+    ergonomic_alphabet = false
+}
+
+M.setup = function(params)
+    vim.validate({ params = { params, 'table',true} })
+    M.config = vim.tbl_deep_extend('force', {}, M.config, params)
+
+    vim.validate({ ergonomic_alphabet = { params.ergonomic_alphabet,{'boolean', 'nil'} }} )
+
+    if params.ergonomic_alphabet then
+        local alt_alphabet = "asdfghlbceimnoprtuvwxyz"
+        M.config.alphabet = alt_alphabet
+    end
+
+end
+
 -- Define a highlight group for the alphabet label
 vim.api.nvim_command('highlight AlphabetLabel guifg=Cyan ctermfg=Cyan')
 
@@ -9,7 +27,7 @@ function M.quick_buffer_jump()
     local buffers = api.nvim_list_bufs()
     local lines = {}
     local buffer_map = {}  -- Table to map line numbers to buffer numbers
-    local alphabet = 'abcdefghilmnoprstuvwxyz'
+    local alphabet = M.config.alphabet
     local alphabet_count = 1
 
     -- Create buffer for the floating window
