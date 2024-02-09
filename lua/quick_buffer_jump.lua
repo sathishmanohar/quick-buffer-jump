@@ -9,7 +9,7 @@ M.setup = function(params)
     vim.validate({ params = { params, 'table',true} })
     M.config = vim.tbl_deep_extend('force', {}, M.config, params)
 
-    vim.validate({ ergonomic_alphabet = { params.ergonomic_alphabet,'boolean' }} )
+    vim.validate({ ergonomic_alphabet = { params.ergonomic_alphabet,{'boolean', 'nil'} }} )
 
     if params.ergonomic_alphabet then
         local alt_alphabet = "asdfghlbceimnoprtuvwxyz"
