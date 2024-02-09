@@ -42,10 +42,10 @@ inside your `init.lua`
 
 
 ### Ergonomic Alphabet Option
-To switch the default buffer labels from `abcd...` to `asdf...`, the `ergonmic_alphabet` option can be passed as a
+To switch the default buffer labels from `abcd...` to `asdf...`, the `ergonomic_alphabet` option can be passed as a
 table to the setup function like the example below:
 
-`require "quick_buffer_jump".setup{ ergonmic_alphabet = true }`
+`require "quick_buffer_jump".setup{ ergonomic_alphabet = true }`
 
 
 ## Usage Instructions
