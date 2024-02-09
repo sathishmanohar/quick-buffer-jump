@@ -2,22 +2,32 @@ local M = {}
 
 M.config = {
     alphabet = "abcdefghilmnoprstuvwxyz",
+    ergonomic_alphabet = false
 }
 
+function M.validateAlphabet()
+    if string.find(M.config.alphabet, "[qjk]", 1, false) then
+        M.config.alphabet = string.gsub(M.config.alphabet,"[qjk]+","")
+
+        return false, "quick_buffer_jump error: the alphabet can't contain `q`,`j`, or `k`"
+    end
+    return true
+end
+
+
+-- Verify Options are of the correct type and valid
 M.setup = function(params)
-    vim.validate({ params = { params, 'table',true}, alphabet = {params.alphabet,'string',true} })
+    vim.validate({ params = { params, 'table',true} })
     M.config = vim.tbl_deep_extend('force', {}, M.config, params)
 
-    vim.validate({ alphabet = { params.alphabet, function()
+    if params.ergonomic_alphabet then
+        local alt_alphabet = "asdfhlbcegimnoprtuvwxyz"
+        M.config.alphabet = alt_alphabet
+    end
 
-        if string.find(M.config.alphabet, "[qjk]", 1, false) then
-            M.config.alphabet = string.gsub(M.config.alphabet,"[qjk]+","")
+    vim.validate({ ergonomic_alphabet = { params.ergonomic_alphabet,'boolean' }} )
+    vim.validate({ alphabet = { params.alphabet, M.validateAlphabet }} )
 
-            return false, "quick_buffer_jump error: the alphabet can't contain `q`,`j`, or `k`"
-        end
-        return true
-    end}
-    })
 end
 
 -- Define a highlight group for the alphabet label
