@@ -21,7 +21,7 @@ M.setup = function(params)
     M.config = vim.tbl_deep_extend('force', {}, M.config, params)
 
     if params.ergonomic_alphabet then
-        local alt_alphabet = "asdfhlbcegimnoprtuvwxyz"
+        local alt_alphabet = "asdfghlbceimnoprtuvwxyz"
         M.config.alphabet = alt_alphabet
     end
 
