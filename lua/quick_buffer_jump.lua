@@ -68,6 +68,9 @@ function M.quick_buffer_jump()
         border = 'rounded'
     })
 
+	-- Set the lines for the floating window
+    api.nvim_buf_set_lines(float_buf, 0, -1, false, lines)
+
 	-- Enable cursorline for the floating window
     api.nvim_win_set_option(float_win, 'cursorline', true)
 
@@ -76,8 +79,6 @@ function M.quick_buffer_jump()
 
 	-- Enable line numbers for the floating window
 	api.nvim_win_set_option(float_win, 'number', true)
-
-    api.nvim_buf_set_lines(float_buf, 0, -1, false, lines)
 
     -- Store the buffer map in a buffer-local variable
     api.nvim_buf_set_var(float_buf, "buffer_map", buffer_map)
