@@ -71,6 +71,9 @@ function M.quick_buffer_jump()
 	-- Enable cursorline for the floating window
     api.nvim_win_set_option(float_win, 'cursorline', true)
 
+	-- Disable modifiable for the floating window
+	api.nvim_win_set_option(float_win, 'modifiable', false)
+
 	-- Enable line numbers for the floating window
 	api.nvim_win_set_option(float_win, 'number', true)
 
